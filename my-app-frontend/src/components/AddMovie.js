@@ -17,20 +17,21 @@ function AddMovie(){
 
         console.log(title, director, genre, year, comment, created_at);
 
-const newMovie= {
-  title,
-  director,
-  genre,
-  year,
-  comment,
-  created_at,
-  updated_at: ""
-}
+      const newMovie= {
+        title,
+        director,
+        genre,
+        year,
+        comment,
+        created_at,
+        updated_at: ""
+      }
+console.log(newMovie)
 
         fetch("http://localhost:8000/movie", {
           method: "POST",
           headers: {
-            Accept: "application/json",
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({newMovie})
         })
